@@ -12,6 +12,14 @@ function App() {
   const { current: defaultState } = useRef(qrcodes.slice(0, 10));
 
 
+  const debounced = useDebouncedCallback(
+    () => {
+      console.log(qrcodes[tokenId - 1])
+      setQrToDisplay(qrcodes[tokenId - 1])
+    },
+    300
+  );
+
   useEffect(() => {
     if (!tokenId) {
       setQrToDisplay(null)
@@ -21,13 +29,7 @@ function App() {
 
   }, [tokenId, debounced])
 
-  const debounced = useDebouncedCallback(
-    () => {
-      console.log(qrcodes[tokenId - 1])
-      setQrToDisplay(qrcodes[tokenId - 1])
-    },
-    300
-  );
+
 
   return (
     <div className="App">

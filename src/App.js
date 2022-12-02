@@ -47,13 +47,13 @@ function App() {
               return (
                 <div key={link.url} style={{ width: '23%', marginBottom: '50px' }} >
                   <p style={{ color: '#ffffff' }}>TokenID: {link.tokenId}</p>
-                  <QRCode value={link.url} type='qr' bgColor='green' size={100} />
+                  <QRCode value={link.url} type='qr' bgColor='green' size={150} />
                 </div>
               )
             })
             : qrToDisplay ? <div style={{ marginY: '50px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }} >
               <p style={{ color: '#ffffff' }}>TokenID: {qrToDisplay.tokenId}</p>
-              <QRCode value={qrToDisplay.url} type='qr' bgColor='green' size={100} />
+              <QRCode value={qrToDisplay.url} type='qr' bgColor='green' size={150} />
             </div> : <></>}
 
           {/* {AirdropLinks.map(link => {

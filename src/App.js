@@ -19,7 +19,7 @@ function App() {
 
     debounced()
 
-  }, [tokenId])
+  }, [tokenId, debounced])
 
   const debounced = useDebouncedCallback(
     () => {
